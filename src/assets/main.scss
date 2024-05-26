@@ -1,1 +1,5 @@
 @import '../../node_modules/bootstrap/scss/bootstrap';
+
+.card:hover{
+  background: shade-color(white,10%);
+}

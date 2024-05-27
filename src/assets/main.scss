@@ -1,5 +1,17 @@
+$primary:#0534B8;
+$secondary:#FF7500;
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black');
 @import '../../node_modules/bootstrap/scss/bootstrap';
 
 .card:hover{
   background: shade-color(white,10%);
+}
+.title{
+  font-family: "Archivo Black", sans-serif;
+  font-size: 42pt;
+  font-style: italic;
+  letter-spacing: 4px;
+  -webkit-text-stroke: 1px $white;
+  border-radius: 50%;
 }

@@ -5,8 +5,8 @@ import {RouterLink, RouterView} from 'vue-router'
 <template>
   <header>
     <nav class="container-fluid navbar bg-primary p-3">
-      <h1 class="text-secondary title bg-white py-3">Dart Base</h1>
-      <button @click="$router.push('add')" class="btn btn-secondary text-white">Add Product</button>
+      <img src="./assets/DartBaseLogo.svg" class="col-2" @click="$router.push('/home')">
+      <button @click="$router.push('/add')" class="btn btn-secondary text-white">Add Product</button>
     </nav>
   </header>
   <main>

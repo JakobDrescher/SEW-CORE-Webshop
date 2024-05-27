@@ -5,10 +5,7 @@
         <input type="text" class="form-control" v-model="name" placeholder="NERF Jolt" id="productName">
         <label for="productName">Product Name</label>
       </div>
-      <div class="form-floating col-2 p-0">
-        <input type="number" class="form-control" v-model="id" placeholder="1" id="id">
-        <label for="id">Product Nr</label>
-      </div>
+      <h3 class="col-5">Product Nr: {{id}}</h3>
     </div>
     <div class="row my-2 col-12 justify-content-between">
       <div class="form-floating col-2 p-0">
@@ -34,11 +31,21 @@
 <script setup>
 import {ref} from "vue";
 import {useProductStore} from "@/stores/productStore.js";
+import {useRoute} from "vue-router";
 
-const name = ref();
-const price = ref();
-const description = ref();
-const img = ref();
-const id = ref();
+
+
+
 const productStore = useProductStore();
+const route=useRoute();
+
+console.log(route.params.id);
+
+let currentProduct=productStore.getProduct(route.params.id);
+
+const name = ref(currentProduct.name);
+const price = ref(currentProduct.price);
+const description = ref(currentProduct.description);
+const img = ref(currentProduct.img);
+const id = ref(currentProduct.id);
 </script>

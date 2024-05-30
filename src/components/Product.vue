@@ -5,7 +5,8 @@
     <h3 class="card-title">{{name}}</h3>
     <h4 class="card-subtitle">{{price}}€</h4>
     <p class="card-text">{{description}}</p>
-    <button class="btn btn-secondary text-white" @click="productStore.deleteProduct(productId)">DELETE</button>
+    <button class="btn btn-secondary text-white m-1" @click="productStore.deleteProduct(productId)">DELETE</button>
+    <button class="btn btn-secondary text-white m-1" @click="$router.push('/edit/'+productId)">EDIT</button>
   </div>
 </div>
 </template>

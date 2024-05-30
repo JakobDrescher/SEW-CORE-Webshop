@@ -23,7 +23,7 @@
       <label for="productDescription">Product Description</label>
     </div>
     <button class="btn btn-primary col-3 form-floating row"
-            @click="productStore.addProduct(name,price,description,img,id); $router.push('home');">Add Product
+            @click="productStore.editProduct(name,price,description,img,id); $router.push('/home');">Edit Product
     </button>
   </form>
 </template>
@@ -33,16 +33,13 @@ import {ref} from "vue";
 import {useProductStore} from "@/stores/productStore.js";
 import {useRoute} from "vue-router";
 
-
-
-
 const productStore = useProductStore();
 const route=useRoute();
 
 console.log(route.params.id);
 
 let currentProduct=productStore.getProduct(route.params.id);
-
+console.log(currentProduct);
 const name = ref(currentProduct.name);
 const price = ref(currentProduct.price);
 const description = ref(currentProduct.description);
